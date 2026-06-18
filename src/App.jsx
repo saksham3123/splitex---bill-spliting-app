@@ -98,6 +98,7 @@ export default function App() {
           onNext={() => goTo(3)}
           onBack={() => goTo(1)}
           addToast={addToast}
+          currency={billState.currency}
         />
       )}
       {step === 3 && (

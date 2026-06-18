@@ -10,7 +10,7 @@ const ITEM_SUGGESTIONS = [
   { name: 'Uber', icon: '🚗' },
 ];
 
-function ItemRow({ item, people, avatarColors, onUpdate, onRemove }) {
+function ItemRow({ item, people, avatarColors, onUpdate, onRemove, currencySymbol }) {
   const [editing, setEditing] = useState(false);
   const [localName, setLocalName] = useState(item.name);
   const [localAmount, setLocalAmount] = useState(item.amount.toString());
@@ -75,7 +75,7 @@ function ItemRow({ item, people, avatarColors, onUpdate, onRemove }) {
                 ) : null}
               </div>
             </div>
-            <span className="item-amount">${item.amount.toFixed(2)}</span>
+            <span className="item-amount">{currencySymbol}{item.amount.toFixed(2)}</span>
           </div>
 
           <div className="item-assign-selector">
@@ -116,12 +116,17 @@ function ItemRow({ item, people, avatarColors, onUpdate, onRemove }) {
   );
 }
 
-export function StepItems({ items, people, avatarColors, onAddItem, onUpdateItem, onRemoveItem, onNext, onBack, addToast }) {
+const CURRENCY_SYMBOLS = {
+  USD: '$', EUR: '€', GBP: '£', INR: '₹', JPY: '¥', AUD: 'A$', CAD: 'C$',
+};
+
+export function StepItems({ items, people, avatarColors, onAddItem, onUpdateItem, onRemoveItem, onNext, onBack, addToast, currency }) {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const [assignedTo, setAssignedTo] = useState('all');
 
   const subtotal = items.reduce((s, i) => s + i.amount, 0);
+  const currencySymbol = CURRENCY_SYMBOLS[currency] || '$';
 
   const handleAdd = () => {
     const parsed = parseFloat(amount);
@@ -155,7 +160,7 @@ export function StepItems({ items, people, avatarColors, onAddItem, onUpdateItem
         {items.length > 0 && (
           <div className="items-summary-badge">
             <span className="badge badge-amber">{items.length} items</span>
-            <span className="subtotal-display">${subtotal.toFixed(2)}</span>
+            <span className="subtotal-display">{currencySymbol}{subtotal.toFixed(2)}</span>
           </div>
         )}
       </div>
@@ -176,7 +181,7 @@ export function StepItems({ items, people, avatarColors, onAddItem, onUpdateItem
             />
           </div>
           <div className="amount-wrap">
-            <span className="input-prefix">$</span>
+            <span className="input-prefix">{currencySymbol}</span>
             <input
               id="item-amount-input"
               className="input input-with-prefix"
@@ -247,6 +252,7 @@ export function StepItems({ items, people, avatarColors, onAddItem, onUpdateItem
               people={people}
               avatarColors={avatarColors}
               onUpdate={onUpdateItem}
+              currencySymbol={currencySymbol}
               onRemove={(id) => {
                 onRemoveItem(id);
                 addToast('Item removed', 'info');
