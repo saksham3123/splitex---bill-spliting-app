@@ -75,21 +75,9 @@ npm run build
 
 ---
 
-## 🌐 Deployment
+## 🌐 Live Link
 
-This app is ready to deploy on **Vercel** with zero configuration.
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com) → **New Project** → Import your repo
-3. Vercel auto-detects Vite — click **Deploy**
-4. 🎉 Your app is live!
-
-Alternatively, use the Vercel CLI:
-
-```bash
-npm i -g vercel
-vercel
-```
+https://splitex-bill-spliting-app.vercel.app/
 
 ---
 
