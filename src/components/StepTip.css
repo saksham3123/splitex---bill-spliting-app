@@ -1,0 +1,141 @@
+.step-tip {
+  padding: 28px;
+}
+
+.tip-section {
+  margin-bottom: 24px;
+}
+
+.tip-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.tip-section-header .label {
+  margin-bottom: 0;
+}
+
+.tip-value-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tip-percent {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tip-amount-preview {
+  font-size: 13px;
+  color: var(--accent-green);
+  font-weight: 600;
+  background: rgba(52, 211, 153, 0.1);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ─── Tip Presets ────────────────────────────────────────── */
+.tip-presets {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.tip-preset-btn {
+  flex: 1;
+  min-width: 54px;
+  padding: 8px 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.tip-preset-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tip-preset-btn.active {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  border-color: rgba(99, 102, 241, 0.4);
+  color: var(--accent-primary);
+}
+
+/* ─── Slider ─────────────────────────────────────────────── */
+.tip-slider-wrap {
+  margin-bottom: 8px;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ─── Grand Total Preview ────────────────────────────────── */
+.grand-total-preview {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.total-breakdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 4px 0;
+}
+
+.accent-row span:last-child {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.accent-row-amber span:last-child {
+  color: var(--accent-amber);
+  font-weight: 600;
+}
+
+.grand-row {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.grand-amount {
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a5b4fc, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.step-footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}

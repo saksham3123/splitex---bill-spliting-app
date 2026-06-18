@@ -1,0 +1,328 @@
+/* ─── Dashboard Shell ────────────────────────────────────── */
+.dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 28px 20px 20px;
+}
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.dashboard-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.dashboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dashboard-logo {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(129,140,248,0.22), rgba(167,139,250,0.18));
+  border: 1px solid rgba(129,140,248,0.22);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e0e7ff, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.dashboard-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.dashboard-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-lg {
+  padding: 11px 22px;
+  font-size: 14px;
+  border-radius: var(--radius-full);
+}
+
+.btn-plus {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* ─── Section Header ─────────────────────────────────────── */
+.groups-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.groups-section-header h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ─── Groups Grid ────────────────────────────────────────── */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+/* ─── Group Card ─────────────────────────────────────────── */
+.group-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+  box-shadow: var(--shadow-card);
+}
+
+.group-card:hover {
+  border-color: color-mix(in srgb, var(--card-accent, #818cf8) 35%, var(--border));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card), 0 0 20px color-mix(in srgb, var(--card-accent, #818cf8) 12%, transparent);
+}
+
+/* Accent top bar */
+.group-card-accent {
+  height: 3px;
+  background: var(--card-accent, #818cf8);
+  flex-shrink: 0;
+}
+
+/* Top row */
+.group-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 14px 0;
+}
+
+.group-card-icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.group-card-badges {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 2px;
+}
+
+.group-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.group-delete-btn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 17px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.group-delete-btn:hover {
+  background: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.2);
+  color: var(--accent-red);
+}
+
+.group-delete-btn.confirm {
+  background: rgba(251, 191, 36, 0.1);
+  border-color: rgba(251, 191, 36, 0.25);
+  color: var(--accent-amber);
+  font-size: 13px;
+}
+
+/* Body */
+.group-card-body {
+  padding: 12px 14px 8px;
+  flex: 1;
+}
+
+.group-card-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.group-card-total {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--card-accent, var(--accent-primary));
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.group-card-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Footer */
+.group-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+
+.group-card-date {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.group-open-cta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--card-accent, var(--accent-primary));
+  transition: var(--transition);
+}
+
+/* ─── "New Group" Card ───────────────────────────────────── */
+.group-card-new {
+  border: 1.5px dashed rgba(129, 140, 248, 0.25);
+  background: rgba(129, 140, 248, 0.03);
+  min-height: 170px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.group-card-new:hover {
+  border-color: rgba(129, 140, 248, 0.5);
+  background: rgba(129, 140, 248, 0.06);
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.new-group-plus {
+  font-size: 28px;
+  font-weight: 200;
+  line-height: 1;
+  color: var(--accent-primary);
+  opacity: 0.6;
+}
+
+.group-card-new:hover .new-group-plus { opacity: 1; }
+
+/* ─── Empty State ────────────────────────────────────────── */
+.dashboard-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 80px 24px;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.empty-big-icon {
+  font-size: 64px;
+  opacity: 0.2;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.dashboard-empty h2 {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+}
+
+.dashboard-empty p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 260px;
+}
+
+/* ─── Footer wrap ────────────────────────────────────────── */
+.dashboard-footer-wrap {
+  margin-top: 48px;
+  padding: 0 0 20px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .dashboard { padding: 18px 14px 16px; }
+  .dashboard-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .dashboard-hero-actions { width: 100%; justify-content: space-between; }
+  .dashboard-title { font-size: 1.7rem; }
+  .groups-grid { grid-template-columns: 1fr; }
+}

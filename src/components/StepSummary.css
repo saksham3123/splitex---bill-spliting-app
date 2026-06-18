@@ -1,0 +1,321 @@
+.step-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Grand Total Hero ───────────────────────────────────── */
+.grand-total-hero {
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.grand-total-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+}
+
+.grand-hero-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.grand-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.grand-value {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e0e7ff, #a5b4fc, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.grand-breakdown-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.pill {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+}
+
+.pill-label {
+  color: var(--text-muted);
+}
+
+.pill-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.pill-green .pill-value { color: var(--accent-green); }
+.pill-amber .pill-value { color: var(--accent-amber); }
+
+.grand-per-person {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.grand-per-person span:first-child {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-electric);
+}
+
+.grand-per-label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ─── Section Header ─────────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.section-header h3 {
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ─── Person Cards Grid ──────────────────────────────────── */
+.person-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.person-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.person-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.person-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border);
+}
+
+.person-card-info {
+  flex: 1;
+}
+
+.person-card-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.person-card-total {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.person-card-body {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-breakdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.breakdown-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 2px 0;
+}
+
+.breakdown-row.muted {
+  color: var(--text-muted);
+}
+
+/* ─── Settlements ────────────────────────────────────────── */
+.settlements-card {
+  padding: 20px 24px;
+}
+
+.settlements-equal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent-green);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.settlements-icon {
+  font-size: 24px;
+}
+
+.settlements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settlement-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.settlement-row:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.settlement-from,
+.settlement-to {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settlement-to {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.settlement-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.settlement-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-muted);
+}
+
+.arrow-amount {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-primary);
+  white-space: nowrap;
+}
+
+.arrow-tip {
+  font-size: 18px;
+  color: var(--accent-primary);
+}
+
+.arrow-line {
+  display: none;
+}
+
+/* ─── Actions ────────────────────────────────────────────── */
+.summary-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
+}
+
+/* ─── Print ──────────────────────────────────────────────── */
+@media print {
+  body { background: white; color: black; }
+  .app-header, .summary-actions, .toast-container { display: none !important; }
+  .step-summary { color: black; }
+  .grand-total-hero, .person-card, .settlements-card {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    color: black !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .grand-value { font-size: 2.2rem; }
+  .grand-hero-inner { flex-direction: column; }
+  .grand-breakdown-pills { align-items: flex-start; }
+  .person-cards-grid { grid-template-columns: 1fr; }
+}

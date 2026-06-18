@@ -1,0 +1,13 @@
+/* App-level styles (minimal — index.css handles design tokens) */
+
+.app-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+}
+
+@media (max-width: 600px) {
+  .app-wrapper {
+    padding: 16px 12px 80px;
+  }
+}
